@@ -104,13 +104,13 @@ export const getLatestRequestInteractions = async (mentor) => {
 };
 
 export async function tryRegisterMentor(app) {
-  const {discordId, discorName} = app
+  const {discordId, discordName} = app
   const registeredUser = await getUserById(app.discordId);
   if (registeredUser) {
     return registeredUser;
   }
   const newUser = new User({
-    discorName,
+    discordName,
     discordId,
     isTrial: true,
   });
